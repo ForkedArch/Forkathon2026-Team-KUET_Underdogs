@@ -8,10 +8,10 @@
 
 | Name     | Roll     | Department | GitHub    |
 | -------- | -------- | ---------- | --------- |
-| Member 1 | 2K25XXXX | CSE        | @username |
-| Member 2 | 2K25XXXX | CSE        | @username |
-| Member 3 | 2K25XXXX | CSE        | @username |
-| Member 4 | 2K25XXXX | CSE        | @username |
+| Nazmus Sadat | 2507024 | CSE        | @NazmusSadat0 |
+| Adil Mahmud Ayon | 2507103 | CSE        | @adilmahmudayon-hue |
+| Mitaly Farzana | 2507091 | CSE        | @mitalyoyshe |
+| Antora Ghosh | 2507097 | CSE        | @agantoraghosh-prog |
 
 ---
 
