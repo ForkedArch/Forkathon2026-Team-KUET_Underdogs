@@ -1,6 +1,6 @@
 <img src="https://i.ibb.co.com/7NrtB6Vv/image.png" />
 
-# Forkathon 2026: [Your Project Name] by [Your Team Name]
+# Forkathon 2026: [Your Project Name] by KUET_Underdogs
 
 > Built for ForkedArch Freshers Hackathon 2026
 
@@ -21,7 +21,7 @@
 
 > Replace this section with the problem statement assigned to your team.
 
-### 🤔 [TEAM NAME]'s Understanding
+### 🤔 KUET_Underdogs's Understanding
 
 Explain the problem in your own words. You may say a story mentioning your team member names!
 
