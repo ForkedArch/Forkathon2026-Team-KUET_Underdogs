@@ -39,9 +39,19 @@ Brainstorming twist: Don't assume that "available" simply means "empty." What ma
 
 Explain the problem in your own words. You may say a story mentioning your team member names!
 
-What is the actual problem?
-Who experiences it?
-Why does it matter?
+Problems : 
+
+1. No clear way to find spaces: Students do not know which rooms they could use.
+2. Unknown availability: Students cannot check when a room is free or for how long.
+3. Unclear permissions: Students do not know who can use a room or whether approval is required.
+4. No clear booking process: Students must ask around or visit the department office.
+5. Conflicting bookings: Multiple groups could request the same space at the same time.
+6. Unused reservations: A group books a room but never shows up, blocking others.
+7. Uncommunicated cancellations: Others do not know when a cancelled booking makes a room available again.
+8. Missing room information: Students cannot check capacity, equipment, or suitability for their activity.
+9. Unclear access instructions: A room may be free, but students do not know where to collect the key or whom to contact.
+10. Unfair booking access: A few users could repeatedly reserve popular spaces. 
+11. No usage history: Administrators lack a clear record of bookings, cancellations, and reported usage.
 
 ---
 
