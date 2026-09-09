@@ -19,7 +19,21 @@
 
 ### Problem Statement
 
-> Replace this section with the problem statement assigned to your team.
+The Empty Room
+
+A classroom is empty for three hours every afternoon. Somewhere else, a group of students is desperately looking for a place to work. A laboratory is available, but nobody knows whether they are allowed to use it. A meeting room has been reserved but nobody actually shows up.
+
+There is space everywhere—but somehow, nobody can find it when they need it.
+
+What an absolute mess!
+KUET needs this problem to be solutioned soon.
+
+Maybe a digital solution for this that will be able to solve this?
+The system could deal with classrooms, study spaces, meeting rooms, labs, sports facilities, community spaces, or even resources outside a campus.
+Probably a system where you can know the availability, booking, conflicts, cancellations, usage, permissions, and fairness.
+
+Brainstorming twist: Don't assume that "available" simply means "empty." What makes a space genuinely usable?
+
 
 ### 🤔 KUET_Underdogs's Understanding
 
