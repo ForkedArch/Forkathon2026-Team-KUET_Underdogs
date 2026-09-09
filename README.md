@@ -1,6 +1,6 @@
 <img src="https://i.ibb.co.com/7NrtB6Vv/image.png" />
 
-# Forkathon 2026: [Your Project Name] by KUET_Underdogs
+# Forkathon 2026: [KUET CAMPUS SPACE MANAGEMENT] by KUET_Underdogs
 
 > Built for ForkedArch Freshers Hackathon 2026
 
