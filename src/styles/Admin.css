@@ -1,0 +1,398 @@
+.admin-page-container {
+  width: min(1250px, 92%);
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.admin-dashboard {
+  padding: 48px 0 70px;
+}
+
+.admin-heading {
+  margin-bottom: 34px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.admin-page-label {
+  margin: 0 0 10px;
+  color: #1559df;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+
+.admin-heading h1 {
+  margin: 0 0 10px;
+  font-size: 36px;
+  letter-spacing: -1.4px;
+}
+
+.admin-heading p {
+  margin: 0;
+  color: #718095;
+}
+
+.admin-primary-button {
+  min-height: 46px;
+  padding: 12px 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  background: #1559df;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.admin-statistics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 17px;
+  margin-bottom: 32px;
+}
+
+.admin-stat-card,
+.admin-panel,
+.request-card,
+.add-space-form {
+  border: 1px solid #e0e7ef;
+  border-radius: 13px;
+  background: white;
+}
+
+.admin-stat-card {
+  padding: 21px;
+}
+
+.admin-stat-card span {
+  color: #718095;
+  font-size: 13px;
+}
+
+.admin-stat-card strong {
+  display: block;
+  margin: 12px 0;
+  font-size: 30px;
+}
+
+.admin-stat-card a {
+  color: #1559df;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.admin-panel {
+  padding: 26px;
+}
+
+.admin-panel-heading {
+  margin-bottom: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-panel-heading h2 {
+  margin: 0 0 6px;
+}
+
+.admin-panel-heading p {
+  margin: 0;
+  color: #718095;
+  font-size: 13px;
+}
+
+.admin-table-wrapper {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 15px;
+  border-bottom: 1px solid #e8edf3;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.admin-table th {
+  color: #718095;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.admin-table td {
+  color: #44586f;
+  font-size: 13px;
+}
+
+.admin-table td strong,
+.admin-table td small {
+  display: block;
+}
+
+.admin-table td small {
+  margin-top: 5px;
+  color: #8793a3;
+}
+
+.admin-status {
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.status-pending {
+  background: #fff3da;
+  color: #8c6013;
+}
+
+.status-approved,
+.status-checked_in {
+  background: #e7f7ee;
+  color: #237248;
+}
+
+.status-rejected,
+.status-cancelled,
+.status-no_show {
+  background: #fdeaea;
+  color: #a63b3b;
+}
+
+.status-completed {
+  background: #eaf2ff;
+  color: #1559df;
+}
+
+.admin-error {
+  margin-bottom: 22px;
+  padding: 13px;
+  border: 1px solid #efc5c5;
+  border-radius: 8px;
+  background: #fff1f1;
+  color: #922f2f;
+}
+
+.admin-empty-message {
+  padding: 40px;
+  color: #718095;
+  text-align: center;
+}
+
+.request-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.request-card {
+  padding: 24px;
+}
+
+.request-card-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.request-card-heading h2 {
+  margin: 0 0 7px;
+}
+
+.request-card-heading p {
+  margin: 0;
+  color: #718095;
+  font-size: 13px;
+}
+
+.request-details-grid {
+  margin: 23px 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.request-details-grid div {
+  padding: 13px;
+  border-radius: 8px;
+  background: #f5f8fc;
+}
+
+.request-details-grid span,
+.request-details-grid small {
+  display: block;
+  color: #7a889a;
+  font-size: 11px;
+}
+
+.request-details-grid strong {
+  display: block;
+  margin: 7px 0;
+  font-size: 13px;
+}
+
+.request-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.request-actions select,
+.history-filter {
+  min-height: 43px;
+  padding: 10px;
+  border: 1px solid #d4deea;
+  border-radius: 7px;
+  background: white;
+}
+
+.approve-request-button,
+.reject-request-button {
+  padding: 10px 17px;
+  border-radius: 7px;
+  font-weight: 600;
+}
+
+.approve-request-button {
+  border: none;
+  background: #198754;
+  color: white;
+}
+
+.reject-request-button {
+  border: 1px solid #dda8a8;
+  background: white;
+  color: #aa3737;
+}
+
+.space-management-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+}
+
+.add-space-form {
+  padding: 25px;
+}
+
+.add-space-form h2,
+.space-list-panel h2 {
+  margin-top: 0;
+}
+
+.add-space-form label {
+  display: block;
+  margin-bottom: 17px;
+  color: #42566d;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.add-space-form input,
+.add-space-form select {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 11px;
+  border: 1px solid #d4deea;
+  border-radius: 7px;
+}
+
+.time-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.managed-space-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.managed-space-card {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid #e5eaf0;
+  border-radius: 9px;
+}
+
+.managed-space-card h3 {
+  margin: 0 0 6px;
+}
+
+.managed-space-card p,
+.managed-space-card small {
+  margin: 0;
+  color: #718095;
+}
+
+.activate-button,
+.deactivate-button {
+  padding: 9px 13px;
+  border-radius: 7px;
+  font-weight: 600;
+}
+
+.activate-button {
+  border: 1px solid #99ceb0;
+  background: white;
+  color: #237248;
+}
+
+.deactivate-button {
+  border: 1px solid #dda8a8;
+  background: white;
+  color: #aa3737;
+}
+
+@media (max-width: 900px) {
+  .admin-statistics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .request-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .space-management-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .admin-heading,
+  .request-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-statistics,
+  .request-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar-links a {
+    display: none;
+  }
+
+  .time-field-row {
+    grid-template-columns: 1fr;
+  }
+}

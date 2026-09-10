@@ -1,16 +1,24 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+
 import Home from "./pages/Home";
 import StudentLogin from "./pages/StudentLogin";
 import StudentSignup from "./pages/StudentSignup";
 import AdminLogin from "./pages/AdminLogin";
+
+import StudentLayout from "./layouts/StudentLayout";
 import StudentDashboard from "./pages/StudentDashboard";
 import BookingPage from "./pages/BookingPage";
+
+import AdminLayout from "./layouts/AdminLayout";
 import AdminDashboard from "./pages/AdminDashboard";
-import StudentLayout from "./layouts/StudentLayout";
+import AdminRequests from "./pages/AdminRequests";
+import ManageSpaces from "./pages/ManageSpaces";
+import AdminBookings from "./pages/AdminBookings";
 
 import "./styles/Home.css";
 import "./styles/Auth.css";
 import "./styles/Student.css";
+import "./styles/Admin.css";
 
 function App() {
   return (
@@ -26,7 +34,12 @@ function App() {
         <Route path="book-space" element={<BookingPage />} />
       </Route>
 
-      <Route path="/admin/dashboard" element={<AdminDashboard />} />
+      <Route path="/admin" element={<AdminLayout />}>
+        <Route path="dashboard" element={<AdminDashboard />} />
+        <Route path="requests" element={<AdminRequests />} />
+        <Route path="spaces" element={<ManageSpaces />} />
+        <Route path="bookings" element={<AdminBookings />} />
+      </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

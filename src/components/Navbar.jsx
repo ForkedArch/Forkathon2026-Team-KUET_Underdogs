@@ -3,7 +3,16 @@ import { Link, NavLink } from "react-router-dom";
 function Navbar({ type = "public", onLogout }) {
   return (
     <header className="navbar">
-      <Link to="/" className="navbar-logo">
+      <Link
+        to={
+          type === "admin"
+            ? "/admin/dashboard"
+            : type === "student"
+              ? "/student/dashboard"
+              : "/"
+        }
+        className="navbar-logo"
+      >
         <span className="navbar-logo-icon">ER</span>
 
         <span>
@@ -12,25 +21,31 @@ function Navbar({ type = "public", onLogout }) {
         </span>
       </Link>
 
-      {type === "student" ? (
-        <nav className="navbar-links student-navigation">
-          <NavLink to="/student/dashboard">
-            Dashboard
-          </NavLink>
+      {type === "student" && (
+        <nav className="navbar-links">
+          <NavLink to="/student/dashboard">Dashboard</NavLink>
+          <NavLink to="/student/book-space">Book a Space</NavLink>
 
-          <NavLink to="/student/book-space">
-            Book a Space
-          </NavLink>
-
-          <button
-            type="button"
-            className="logout-button"
-            onClick={onLogout}
-          >
+          <button className="logout-button" onClick={onLogout}>
             Logout
           </button>
         </nav>
-      ) : (
+      )}
+
+      {type === "admin" && (
+        <nav className="navbar-links">
+          <NavLink to="/admin/dashboard">Dashboard</NavLink>
+          <NavLink to="/admin/requests">Requests</NavLink>
+          <NavLink to="/admin/spaces">Spaces</NavLink>
+          <NavLink to="/admin/bookings">History</NavLink>
+
+          <button className="logout-button" onClick={onLogout}>
+            Logout
+          </button>
+        </nav>
+      )}
+
+      {type === "public" && (
         <nav className="navbar-links">
           <Link to="/student/login">Student Login</Link>
           <Link to="/student/signup">Sign Up</Link>
