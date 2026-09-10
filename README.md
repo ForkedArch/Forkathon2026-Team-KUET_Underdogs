@@ -73,21 +73,12 @@ Explain the complete flow of your system.
 
 ## 🏗️ Architecture
 
-Add your architecture diagram here.
-Demo diagram added down below
+## System Workflow
 
-```text
-User
-  │
-  ▼
-Frontend
-  │
-  ▼
-Backend / API
-  │
-  ├── Database
-  │
-  └── External Services
-```
+<p align="center">
+  <img src="./assets/mermaid-diagram.png"
+       alt="KUET Space Management System Workflow"
+       width="100%">
+</p>
 
 <b>Forkathon: Freshers Hackathon 2026 presented by ForkedArch powered by XtendArena</b>
