@@ -21,28 +21,33 @@ input {
 /* ---------- Shared navbar ---------- */
 
 .navbar {
+  width: 100%;
   margin-top: 18px;
   padding: 16px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  position: relative;
+  z-index: 1000;
+
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(15, 23, 42, 0.07);
+
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    margin: 10px;
-    padding: 12px 16px;
-    border-radius: 12px;
-  }
 }
 
 .navbar-logo {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
+
   color: #172b3a;
   text-decoration: none;
   font-size: 20px;
@@ -52,9 +57,11 @@ input {
 .navbar-logo-icon {
   width: 45px;
   height: 45px;
+
   display: grid;
   place-items: center;
   flex-shrink: 0;
+
   border-radius: 12px;
   background: #1559df;
   color: white;
@@ -65,6 +72,7 @@ input {
 .navbar-logo small {
   display: block;
   margin-top: 5px;
+
   color: #68798d;
   font-size: 10px;
   font-weight: 600;
@@ -74,16 +82,25 @@ input {
 .navbar-links {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 8px;
+  margin-left: auto;
 }
 
 .navbar-links a {
   padding: 10px 13px;
+  position: relative;
+  z-index: 1001;
+
   border-radius: 7px;
   color: #53667d;
+  text-align: center;
   text-decoration: none;
+  white-space: nowrap;
   font-size: 14px;
   font-weight: 600;
+
+  pointer-events: auto;
   transition: 0.2s ease;
 }
 
@@ -99,6 +116,37 @@ input {
 
 .navbar-links .admin-nav-link:hover {
   border-color: #1559df;
+}
+
+/* Phone */
+
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .navbar-logo {
+    justify-content: center;
+  }
+
+  .navbar-links {
+    width: 100%;
+    margin: 0;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .navbar-links a {
+    display: block !important;
+    padding: 10px 4px;
+    font-size: 11px;
+    text-align: center;
+    white-space: nowrap;
+  }
 }
 
 /* ---------- Homepage ---------- */
