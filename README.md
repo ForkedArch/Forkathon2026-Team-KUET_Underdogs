@@ -73,7 +73,6 @@ Explain the complete flow of your system.
 
 ## 🏗️ Architecture
 
-## System Workflow
 
 <p align="center">
   <img src="./assets/mermaid-diagram.png"
