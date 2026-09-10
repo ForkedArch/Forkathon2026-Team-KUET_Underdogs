@@ -3,10 +3,14 @@ import Home from "./pages/Home";
 import StudentLogin from "./pages/StudentLogin";
 import StudentSignup from "./pages/StudentSignup";
 import AdminLogin from "./pages/AdminLogin";
-//import StudentDashboard from "./pages/StudentDashboard";
-//import AdminDashboard from "./pages/AdminDashboard";
+import StudentDashboard from "./pages/StudentDashboard";
+import BookingPage from "./pages/BookingPage";
+import AdminDashboard from "./pages/AdminDashboard";
+import StudentLayout from "./layouts/StudentLayout";
+
 import "./styles/Home.css";
 import "./styles/Auth.css";
+import "./styles/Student.css";
 
 function App() {
   return (
@@ -17,8 +21,12 @@ function App() {
       <Route path="/student/signup" element={<StudentSignup />} />
       <Route path="/admin/login" element={<AdminLogin />} />
 
-      {/* ProtectedRoute will be added after Supabase authentication */}
-     
+      <Route path="/student" element={<StudentLayout />}>
+        <Route path="dashboard" element={<StudentDashboard />} />
+        <Route path="book-space" element={<BookingPage />} />
+      </Route>
+
+      <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
