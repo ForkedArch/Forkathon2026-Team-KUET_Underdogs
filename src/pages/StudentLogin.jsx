@@ -1,16 +1,43 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import Navbar from "../components/Navbar";
 import FormInput from "../components/FormInput";
-
-// Homepage to Login as student to StudentLogin.jsx
+import { signInStudent } from "../services/authService";
 
 function StudentLogin() {
-  function handleSubmit(event) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  async function handleSubmit(event) {
     event.preventDefault();
 
-    // Supabase student login will be added here. 
-    // Adil taratari shesh koira add kor
-    console.log("Student login submitted");
+    setError("");
+    setSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+
+    const { error: loginError } = await signInStudent({
+      email: formData.get("email"),
+      password: formData.get("password"),
+    });
+
+    setSubmitting(false);
+
+    if (loginError) {
+      setError(loginError.message);
+      return;
+    }
+
+    navigate("/student/dashboard", {
+      replace: true,
+    });
   }
 
   return (
@@ -28,27 +55,42 @@ function StudentLogin() {
           </h1>
 
           <p>
-            Log in to find campus spaces, request bookings and track your
-            booking status.
+            Log in to find spaces and track your booking
+            requests.
           </p>
         </section>
 
         <section className="authentication-card">
           <p className="card-label">STUDENT LOGIN</p>
           <h2>Log in to your account</h2>
+
           <p className="card-description">
-            Enter your student roll and password.
+            Enter your email and password.
           </p>
 
-          <form className="authentication-form" onSubmit={handleSubmit}>
+          {location.state?.message && (
+            <div className="authentication-success">
+              {location.state.message}
+            </div>
+          )}
+
+          {error && (
+            <div className="authentication-error">
+              {error}
+            </div>
+          )}
+
+          <form
+            className="authentication-form"
+            onSubmit={handleSubmit}
+          >
             <FormInput
-              label="Student roll"
-              id="student-roll"
-              name="roll"
-              placeholder="Enter your student roll"
-              autoComplete="username"
-              inputMode="numeric"
-              pattern="[0-9]+"
+              label="Email address"
+              id="student-email"
+              name="email"
+              type="email"
+              placeholder="Enter your email"
+              autoComplete="email"
             />
 
             <FormInput
@@ -60,8 +102,14 @@ function StudentLogin() {
               autoComplete="current-password"
             />
 
-            <button className="form-submit-button" type="submit">
-              Log in as student <span>→</span>
+            <button
+              className="form-submit-button"
+              type="submit"
+              disabled={submitting}
+            >
+              {submitting
+                ? "Logging in..."
+                : "Log in as student →"}
             </button>
           </form>
 

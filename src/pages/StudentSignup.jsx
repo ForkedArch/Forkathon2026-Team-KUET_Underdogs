@@ -1,13 +1,44 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import FormInput from "../components/FormInput";
+import { signUpStudent } from "../services/authService";
 
 function StudentSignup() {
-  function handleSubmit(event) {
+  const navigate = useNavigate();
+
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  async function handleSubmit(event) {
     event.preventDefault();
 
-    // Supabase student signup will be added here.
-    console.log("Student signup submitted");
+    setError("");
+    setSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+
+    const { error: signupError } = await signUpStudent({
+      fullName: formData.get("name"),
+      roll: formData.get("roll"),
+      email: formData.get("email"),
+      password: formData.get("password"),
+    });
+
+    setSubmitting(false);
+
+    if (signupError) {
+      setError(signupError.message);
+      return;
+    }
+
+    navigate("/student/login", {
+      replace: true,
+      state: {
+        message:
+          "Account created successfully. You can now log in.",
+      },
+    });
   }
 
   return (
@@ -16,7 +47,9 @@ function StudentSignup() {
 
       <main className="authentication-main">
         <section className="authentication-info">
-          <p className="page-label">STUDENT REGISTRATION</p>
+          <p className="page-label">
+            STUDENT REGISTRATION
+          </p>
 
           <h1>
             Find your
@@ -25,19 +58,29 @@ function StudentSignup() {
           </h1>
 
           <p>
-            Create an account to explore suitable spaces and submit booking
-            requests.
+            Create an account to explore campus spaces and
+            submit booking requests.
           </p>
         </section>
 
         <section className="authentication-card">
           <p className="card-label">CREATE ACCOUNT</p>
           <h2>Student signup</h2>
+
           <p className="card-description">
-            Enter your student information to continue.
+            Enter your student information.
           </p>
 
-          <form className="authentication-form" onSubmit={handleSubmit}>
+          {error && (
+            <div className="authentication-error">
+              {error}
+            </div>
+          )}
+
+          <form
+            className="authentication-form"
+            onSubmit={handleSubmit}
+          >
             <FormInput
               label="Full name"
               id="student-name"
@@ -48,7 +91,7 @@ function StudentSignup() {
 
             <FormInput
               label="Student roll"
-              id="signup-roll"
+              id="student-roll"
               name="roll"
               placeholder="Enter your student roll"
               inputMode="numeric"
@@ -66,7 +109,7 @@ function StudentSignup() {
 
             <FormInput
               label="Password"
-              id="signup-password"
+              id="student-password"
               name="password"
               type="password"
               placeholder="Create a password"
@@ -74,8 +117,14 @@ function StudentSignup() {
               minLength={8}
             />
 
-            <button className="form-submit-button" type="submit">
-              Create student account <span>→</span>
+            <button
+              className="form-submit-button"
+              type="submit"
+              disabled={submitting}
+            >
+              {submitting
+                ? "Creating account..."
+                : "Create student account →"}
             </button>
           </form>
 

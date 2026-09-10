@@ -15,6 +15,8 @@ import AdminRequests from "./pages/AdminRequests";
 import ManageSpaces from "./pages/ManageSpaces";
 import AdminBookings from "./pages/AdminBookings";
 
+import ProtectedRoute from "./components/ProtectedRoute";
+
 import "./styles/Home.css";
 import "./styles/Auth.css";
 import "./styles/Student.css";
@@ -29,12 +31,26 @@ function App() {
       <Route path="/student/signup" element={<StudentSignup />} />
       <Route path="/admin/login" element={<AdminLogin />} />
 
-      <Route path="/student" element={<StudentLayout />}>
+      <Route
+        path="/student"
+        element={
+          <ProtectedRoute allowedRole="student">
+            <StudentLayout />
+          </ProtectedRoute>
+        }
+      >
         <Route path="dashboard" element={<StudentDashboard />} />
         <Route path="book-space" element={<BookingPage />} />
       </Route>
 
-      <Route path="/admin" element={<AdminLayout />}>
+      <Route
+        path="/admin"
+        element={
+          <ProtectedRoute allowedRole="admin">
+            <AdminLayout />
+          </ProtectedRoute>
+        }
+      >
         <Route path="dashboard" element={<AdminDashboard />} />
         <Route path="requests" element={<AdminRequests />} />
         <Route path="spaces" element={<ManageSpaces />} />

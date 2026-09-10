@@ -1,13 +1,38 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import FormInput from "../components/FormInput";
+import { signInAdmin } from "../services/authService";
 
 function AdminLogin() {
-  function handleSubmit(event) {
+  const navigate = useNavigate();
+
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  async function handleSubmit(event) {
     event.preventDefault();
 
-    // Supabase admin login will be added here.
-    console.log("Admin login submitted");
+    setError("");
+    setSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+
+    const { error: loginError } = await signInAdmin({
+      email: formData.get("email"),
+      password: formData.get("password"),
+    });
+
+    setSubmitting(false);
+
+    if (loginError) {
+      setError(loginError.message);
+      return;
+    }
+
+    navigate("/admin/dashboard", {
+      replace: true,
+    });
   }
 
   return (
@@ -16,7 +41,9 @@ function AdminLogin() {
 
       <main className="authentication-main">
         <section className="authentication-info">
-          <p className="page-label admin-label">ADMIN ACCESS</p>
+          <p className="page-label admin-label">
+            ADMIN ACCESS
+          </p>
 
           <h1>
             Manage campus
@@ -25,25 +52,40 @@ function AdminLogin() {
           </h1>
 
           <p>
-            Review requests, manage availability and monitor booking activity.
+            Review requests, manage spaces and monitor booking
+            activity.
           </p>
         </section>
 
         <section className="authentication-card">
-          <p className="card-label admin-card-label">ADMIN LOGIN</p>
+          <p className="card-label admin-card-label">
+            ADMIN LOGIN
+          </p>
+
           <h2>Administrator access</h2>
 
           <p className="card-description">
-            This page is restricted to the designated administrator.
+            Enter the designated administrator’s email and
+            password.
           </p>
 
-          <form className="authentication-form" onSubmit={handleSubmit}>
+          {error && (
+            <div className="authentication-error">
+              {error}
+            </div>
+          )}
+
+          <form
+            className="authentication-form"
+            onSubmit={handleSubmit}
+          >
             <FormInput
-              label="Admin ID"
-              id="admin-id"
-              name="adminId"
-              placeholder="Enter your admin ID"
-              autoComplete="username"
+              label="Admin email"
+              id="admin-email"
+              name="email"
+              type="email"
+              placeholder="Enter admin email"
+              autoComplete="email"
             />
 
             <FormInput
@@ -51,15 +93,18 @@ function AdminLogin() {
               id="admin-password"
               name="password"
               type="password"
-              placeholder="Enter your password"
+              placeholder="Enter admin password"
               autoComplete="current-password"
             />
 
             <button
               className="form-submit-button admin-submit-button"
               type="submit"
+              disabled={submitting}
             >
-              Log in as admin <span>→</span>
+              {submitting
+                ? "Logging in..."
+                : "Log in as admin →"}
             </button>
           </form>
 
