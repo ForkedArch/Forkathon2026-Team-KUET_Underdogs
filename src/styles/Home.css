@@ -1,22 +1,35 @@
-.home-page {
-  width: min(1200px, 90%);
-  min-height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  color: #172b3a;
+/* ---------- Global page styles ---------- */
+
+* {
+  box-sizing: border-box;
 }
 
-.home-header {
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f3f6fa;
+  color: #172b3a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* ---------- Shared navbar ---------- */
+
+.navbar {
   min-height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 30px;
   border-bottom: 1px solid #dce4ed;
 }
 
-.home-logo {
+.navbar-logo {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -26,19 +39,20 @@
   font-weight: 700;
 }
 
-.logo-icon {
+.navbar-logo-icon {
   width: 45px;
   height: 45px;
   display: grid;
   place-items: center;
+  flex-shrink: 0;
   border-radius: 12px;
   background: #1559df;
   color: white;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 1px;
 }
 
-.home-logo small {
+.navbar-logo small {
   display: block;
   margin-top: 5px;
   color: #68798d;
@@ -47,20 +61,45 @@
   letter-spacing: 1.5px;
 }
 
-.admin-login-link {
-  padding: 11px 18px;
-  border: 1px solid #cfd9e5;
-  border-radius: 8px;
-  color: #344a61;
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-links a {
+  padding: 10px 13px;
+  border-radius: 7px;
+  color: #53667d;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
   transition: 0.2s ease;
 }
 
-.admin-login-link:hover {
-  border-color: #1559df;
+.navbar-links a:hover {
+  background: #eaf2ff;
   color: #1559df;
+}
+
+.navbar-links .admin-nav-link {
+  margin-left: 5px;
+  border: 1px solid #cfd9e5;
+}
+
+.navbar-links .admin-nav-link:hover {
+  border-color: #1559df;
+}
+
+/* ---------- Homepage ---------- */
+
+.home-page,
+.page-container {
+  width: min(1200px, 90%);
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .home-main {
@@ -72,6 +111,8 @@
   padding: 65px 0;
 }
 
+/* ---------- Hero section ---------- */
+
 .hero-label {
   margin: 0;
   color: #1559df;
@@ -82,10 +123,11 @@
 
 .hero-content h1 {
   margin: 24px 0;
+  color: #172b3a;
   font-size: clamp(46px, 5.3vw, 72px);
+  font-weight: 650;
   line-height: 1.08;
   letter-spacing: -3px;
-  font-weight: 650;
 }
 
 .hero-content h1 span {
@@ -99,6 +141,8 @@
   font-size: 18px;
   line-height: 1.75;
 }
+
+/* ---------- Homepage buttons ---------- */
 
 .hero-buttons {
   display: flex;
@@ -126,10 +170,13 @@
   border: 1px solid #1559df;
   background: #1559df;
   color: white;
+  box-shadow: 0 10px 22px rgb(21 89 223 / 18%);
 }
 
 .primary-link:hover {
+  border-color: #104bc2;
   background: #104bc2;
+  transform: translateY(-1px);
 }
 
 .primary-link span {
@@ -145,6 +192,7 @@
 .secondary-link:hover {
   border-color: #1559df;
   color: #1559df;
+  transform: translateY(-1px);
 }
 
 .signup-message {
@@ -156,6 +204,17 @@
 .signup-message a {
   color: #1559df;
   font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-message a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Campus space card ---------- */
+
+.space-card-section {
+  width: 100%;
 }
 
 .space-card {
@@ -163,7 +222,7 @@
   border: 1px solid #e0e7f0;
   border-radius: 20px;
   background: white;
-  box-shadow: 0 20px 55px -30px rgb(29 60 100 / 35%);
+  box-shadow: 0 20px 55px -30px rgb(29 60 100 / 38%);
 }
 
 .card-heading {
@@ -182,10 +241,12 @@
   height: 8px;
   border-radius: 50%;
   background: #18a668;
+  box-shadow: 0 0 0 4px rgb(24 166 104 / 10%);
 }
 
 .space-card h2 {
   margin: 18px 0 25px;
+  color: #172b3a;
   font-size: 29px;
   letter-spacing: -1px;
 }
@@ -203,12 +264,16 @@
   border-bottom: 1px solid #edf1f5;
 }
 
+.space-item:last-child {
+  border-bottom: none;
+}
+
 .space-icon {
-  flex-shrink: 0;
-  width: 42px;
-  height: 42px;
+  width: 43px;
+  height: 43px;
   display: grid;
   place-items: center;
+  flex-shrink: 0;
   border-radius: 10px;
   background: #edf4ff;
   color: #1559df;
@@ -218,6 +283,7 @@
 
 .space-item h3 {
   margin: 0 0 5px;
+  color: #263c52;
   font-size: 15px;
 }
 
@@ -238,6 +304,8 @@
   line-height: 1.6;
 }
 
+/* ---------- Footer ---------- */
+
 .home-footer {
   display: flex;
   justify-content: space-between;
@@ -248,7 +316,18 @@
   font-size: 12px;
 }
 
-@media (max-width: 850px) {
+/* ---------- Keyboard accessibility ---------- */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgb(21 89 223 / 25%);
+  outline-offset: 3px;
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 900px) {
   .home-main {
     grid-template-columns: 1fr;
     gap: 45px;
@@ -273,30 +352,43 @@
   }
 }
 
-@media (max-width: 550px) {
-  .home-page {
+/* ---------- Mobile ---------- */
+
+@media (max-width: 650px) {
+  .home-page,
+  .page-container {
     width: 92%;
   }
 
-  .home-header {
+  .navbar {
     min-height: 82px;
   }
 
-  .home-logo {
+  .navbar-logo {
     font-size: 17px;
   }
 
-  .logo-icon {
+  .navbar-logo-icon {
     width: 40px;
     height: 40px;
   }
 
-  .admin-login-link {
+  .navbar-logo small {
+    display: none;
+  }
+
+  .navbar-links a:not(.admin-nav-link) {
+    display: none;
+  }
+
+  .navbar-links .admin-nav-link {
+    margin: 0;
     padding: 9px 11px;
     font-size: 12px;
   }
 
   .home-main {
+    gap: 35px;
     padding: 38px 0;
   }
 
@@ -324,6 +416,10 @@
 
   .space-card {
     padding: 24px 20px;
+  }
+
+  .space-card h2 {
+    font-size: 25px;
   }
 
   .home-footer {

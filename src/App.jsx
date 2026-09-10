@@ -5,7 +5,8 @@ import StudentSignup from "./pages/StudentSignup";
 import AdminLogin from "./pages/AdminLogin";
 //import StudentDashboard from "./pages/StudentDashboard";
 //import AdminDashboard from "./pages/AdminDashboard";
-import "./styles/Home.css"
+import "./styles/Home.css";
+import "./styles/Auth.css";
 
 function App() {
   return (
