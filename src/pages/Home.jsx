@@ -1,23 +1,10 @@
 import { Link } from "react-router-dom";
-import "./Home.css";
+import Navbar from "../components/Navbar";
 
 function Home() {
   return (
     <div className="home-page">
-      <header className="home-header">
-        <Link to="/" className="home-logo">
-          <span className="logo-icon">ER</span>
-
-          <span>
-            The Empty Room
-            <small>KUET SPACE MANAGEMENT</small>
-          </span>
-        </Link>
-
-        <Link to="/admin/login" className="admin-login-link">
-          Admin Login
-        </Link>
-      </header>
+      <Navbar />
 
       <main className="home-main">
         <section className="hero-content">
@@ -31,7 +18,7 @@ function Home() {
 
           <p className="hero-description">
             Discover and request classrooms, study spaces, meeting rooms,
-            laboratories, and sports facilities across KUET.
+            laboratories and sports facilities across KUET.
           </p>
 
           <div className="hero-buttons">
@@ -73,7 +60,7 @@ function Home() {
                 <span className="space-icon">02</span>
 
                 <div>
-                  <h3>Study & meeting spaces</h3>
+                  <h3>Study and meeting spaces</h3>
                   <p>Quiet spaces and rooms for group activities</p>
                 </div>
               </div>
@@ -83,7 +70,9 @@ function Home() {
 
                 <div>
                   <h3>Laboratories</h3>
-                  <p>Equipment, eligibility and supervision requirements</p>
+                  <p>
+                    Equipment, eligibility and supervision requirements
+                  </p>
                 </div>
               </div>
 
@@ -92,7 +81,9 @@ function Home() {
 
                 <div>
                   <h3>Sports facilities</h3>
-                  <p>Supported sports, capacity and included equipment</p>
+                  <p>
+                    Supported sports, capacity and included equipment
+                  </p>
                 </div>
               </div>
             </div>
