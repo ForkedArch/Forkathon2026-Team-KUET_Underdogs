@@ -60,8 +60,8 @@ function Home() {
                 <span className="space-icon">02</span>
 
                 <div>
-                  <h3>Study and meeting spaces</h3>
-                  <p>Quiet spaces and rooms for group activities</p>
+                  <h3>Study Room</h3>
+                  <p>Quiet room for individual study and research</p>
                 </div>
               </div>
 
@@ -84,6 +84,15 @@ function Home() {
                   <p>
                     Supported sports, capacity and included equipment
                   </p>
+                </div>
+              </div>
+
+              <div className="space-item">
+                <span className="space-icon">05</span>
+
+                <div>
+                  <h3>Meeting Room</h3>
+                  <p>Spaces for meetings and discussions</p>
                 </div>
               </div>
             </div>
