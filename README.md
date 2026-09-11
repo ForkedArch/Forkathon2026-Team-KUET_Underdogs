@@ -4,9 +4,6 @@
 
 > Built by KUET_Underdogs for ForkedArch Freshers Hackathon 2026.
 
-## 🌐 Live Website
-
-[Visit Empty Room](https://empty-room-iota.vercel.app)
 
 ## 👥 Team
 
@@ -59,6 +56,22 @@ We understood that students need clear room information and a shared booking pro
 For us, a usable space is more than an empty room. It needs to be suitable for the activity, available for the required time and accessible to the students requesting it.
 
 ---
+
+## 🌐 Live Website
+
+[Visit Empty Room](https://empty-room-iota.vercel.app)
+
+## 🎥 Presentation & Demo Video
+
+[Watch on YouTube](https://youtu.be/p6x6YwgrN18)
+
+## 🔐 Admin Access
+
+Students can create an account through the signup page.
+Admin credentials are available to judges on request.
+Our presentation includes a walkthrough of the admin panel.
+
+
 
 ## 💡 Our Solution
 
