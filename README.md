@@ -67,6 +67,10 @@ We built Empty Room to make finding and booking a space at KUET less confusing. 
 
 The system covers classrooms, study spaces, meeting rooms, laboratories and sports facilities. It also shows capacity, equipment and any listed access requirements, because an empty room is not always a room someone can use.
 
+## 🌐 Live Website
+
+Visit Empty Room : https://empty-room-iota.vercel.app
+
 ### How It Works
 
 1. Students create an account and log in. Their dashboard shows their pending, upcoming and cancelled bookings, along with their booking history.
