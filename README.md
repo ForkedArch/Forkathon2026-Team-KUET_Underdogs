@@ -9,10 +9,10 @@
 
 | Name | Roll | Department | GitHub |
 | --- | --- | --- | --- |
-| Nazmus Sadat | 2507024 | CSE | [@NazmusSadat0](https://github.com/NazmusSadat0) |
-| Adil Mahmud Ayon | 2507103 | CSE | [@adilmahmudayon-hue](https://github.com/adilmahmudayon-hue) |
-| Mitaly Farzana | 2507091 | CSE | [@mitalyoyshe](https://github.com/mitalyoyshe) |
-| Antora Ghosh | 2507097 | CSE | [@agantoraghosh-prog](https://github.com/agantoraghosh-prog) |
+| Nazmus Sadat | 2k2507024 | CSE | [@NazmusSadat0](https://github.com/NazmusSadat0) |
+| Adil Mahmud Ayon | 2k2507103 | CSE | [@adilmahmudayon-hue](https://github.com/adilmahmudayon-hue) |
+| Mitaly Farzana | 2k2507091 | CSE | [@mitalyoyshe](https://github.com/mitalyoyshe) |
+| Antora Ghosh | 2k2507097 | CSE | [@agantoraghosh-prog](https://github.com/agantoraghosh-prog) |
 
 ---
 
