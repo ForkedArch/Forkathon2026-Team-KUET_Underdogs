@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 
+
 function StudentDashboard() {
   const location = useLocation();
 
@@ -303,6 +304,10 @@ function StudentDashboard() {
           </div>
         )}
       </section>
+
+      
+
+
     </main>
   );
 }

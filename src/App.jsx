@@ -14,6 +14,8 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminRequests from "./pages/AdminRequests";
 import ManageSpaces from "./pages/ManageSpaces";
 import AdminBookings from "./pages/AdminBookings";
+import Facilities from "./pages/Facilities";
+
 
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -40,6 +42,7 @@ function App() {
         }
       >
         <Route path="dashboard" element={<StudentDashboard />} />
+        <Route path="/student/facilities" element={<Facilities />} />
         <Route path="book-space" element={<BookingPage />} />
       </Route>
 

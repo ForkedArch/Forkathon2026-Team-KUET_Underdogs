@@ -24,6 +24,7 @@ function Navbar({ type = "public", onLogout }) {
       {type === "student" && (
         <nav className="navbar-links">
           <NavLink to="/student/dashboard">Dashboard</NavLink>
+          <NavLink to="/student/facilities">Facilities</NavLink>
           <NavLink to="/student/book-space">Book a Space</NavLink>
 
           <button className="logout-button" onClick={onLogout}>
