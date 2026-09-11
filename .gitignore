@@ -43,3 +43,6 @@ tmp/
 temp/
 
 *.exe
+
+
+supabase/.temp/
