@@ -68,7 +68,9 @@ For us, a usable space is more than an empty room. It needs to be suitable for t
 ## 🔐 Admin Access
 
 Students can create an account through the signup page.
+
 Admin credentials are available to judges on request.
+
 Our presentation includes a walkthrough of the admin panel.
 
 
