@@ -34,6 +34,10 @@ Probably a system where you can know the availability, booking, conflicts, cance
 
 Brainstorming twist: Don't assume that "available" simply means "empty." What makes a space genuinely usable?
 
+## 🌐 Live Website
+
+Visit Empty Room : https://empty-room-iota.vercel.app
+
 
 ### 🤔 KUET_Underdogs' Understanding
 
@@ -66,10 +70,6 @@ For us, a usable space is more than an empty room. It needs to be suitable for t
 We built Empty Room to make finding and booking a space at KUET less confusing. Instead of asking around or visiting the department office, students can check room facilities, send a booking request and follow its status from one place.
 
 The system covers classrooms, study spaces, meeting rooms, laboratories and sports facilities. It also shows capacity, equipment and any listed access requirements, because an empty room is not always a room someone can use.
-
-## 🌐 Live Website
-
-Visit Empty Room : https://empty-room-iota.vercel.app
 
 
 
