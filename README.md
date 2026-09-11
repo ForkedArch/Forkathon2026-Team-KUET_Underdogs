@@ -71,6 +71,8 @@ The system covers classrooms, study spaces, meeting rooms, laboratories and spor
 
 Visit Empty Room : https://empty-room-iota.vercel.app
 
+
+
 ### How It Works
 
 1. Students create an account and log in. Their dashboard shows their pending, upcoming and cancelled bookings, along with their booking history.
