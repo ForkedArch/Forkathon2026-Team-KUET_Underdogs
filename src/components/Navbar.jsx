@@ -37,6 +37,7 @@ function Navbar({ type = "public", onLogout }) {
         <nav className="navbar-links">
           <NavLink to="/admin/dashboard">Dashboard</NavLink>
           <NavLink to="/admin/requests">Requests</NavLink>
+          <NavLink to="/admin/schedule">Schedule</NavLink>
           <NavLink to="/admin/spaces">Spaces</NavLink>
           <NavLink to="/admin/bookings">History</NavLink>
 

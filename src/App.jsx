@@ -8,13 +8,14 @@ import AdminLogin from "./pages/AdminLogin";
 import StudentLayout from "./layouts/StudentLayout";
 import StudentDashboard from "./pages/StudentDashboard";
 import BookingPage from "./pages/BookingPage";
+import Facilities from "./pages/Facilities";
 
 import AdminLayout from "./layouts/AdminLayout";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminRequests from "./pages/AdminRequests";
 import ManageSpaces from "./pages/ManageSpaces";
 import AdminBookings from "./pages/AdminBookings";
-import Facilities from "./pages/Facilities";
+import AdminSchedule from "./pages/AdminSchedule";
 
 
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -55,6 +56,7 @@ function App() {
         }
       >
         <Route path="dashboard" element={<AdminDashboard />} />
+        <Route path="schedule" element={<AdminSchedule />} />
         <Route path="requests" element={<AdminRequests />} />
         <Route path="spaces" element={<ManageSpaces />} />
         <Route path="bookings" element={<AdminBookings />} />

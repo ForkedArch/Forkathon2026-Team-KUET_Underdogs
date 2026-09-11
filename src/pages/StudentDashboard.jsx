@@ -4,6 +4,21 @@ import { supabase } from "../lib/supabase";
 
 
 function StudentDashboard() {
+
+  const rejectionMessages = {
+    space_not_suitable:
+      "Space is not suitable for this activity.",
+    requirements_not_met:
+      "Permission or eligibility requirements were not met.",
+    invalid_group_size:
+      "Participant count exceeds the room capacity.",
+    time_conflict:
+      "The requested time is unavailable.",
+    incomplete_information:
+      "The booking information is incomplete.",
+  };
+
+
   const location = useLocation();
 
   const [bookings, setBookings] = useState([]);
@@ -27,20 +42,21 @@ function StudentDashboard() {
     const { data, error: bookingError } = await supabase
       .from("bookings")
       .select(`
-        id,
-        booking_date,
-        start_time,
-        end_time,
-        participants,
-        purpose,
-        status,
-        created_at,
-        spaces (
-          name,
-          category,
-          location
-        )
-      `)
+  id,
+  booking_date,
+  start_time,
+  end_time,
+  participants,
+  purpose,
+  status,
+  rejection_reason,
+  created_at,
+  spaces (
+    name,
+    category,
+    location
+  )
+`)
       .eq("student_id", user.id)
       .order("created_at", { ascending: false });
 
@@ -288,6 +304,18 @@ function StudentDashboard() {
                       {booking.participants}
                     </span>
                   </div>
+
+                  {booking.status === "rejected" &&
+                    booking.rejection_reason && (
+                      <div className="booking-rejection-message">
+                        <strong>Reason for rejection</strong>
+
+                        <p>
+                          {rejectionMessages[booking.rejection_reason] ||
+                            formatStatus(booking.rejection_reason)}
+                        </p>
+                      </div>
+                    )}
                 </div>
 
                 {["pending", "approved"].includes(booking.status) && (
@@ -305,7 +333,7 @@ function StudentDashboard() {
         )}
       </section>
 
-      
+
 
 
     </main>
